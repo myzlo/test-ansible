@@ -1,0 +1,5 @@
+[prometheus]
+prometheus.monitoring.local
+
+[grafana]
+grafana.monitoring.local

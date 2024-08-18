@@ -1,0 +1,6 @@
+---
+- name: Install Cloudwatch
+  hosts: prometheus
+  become: true
+  roles:
+    - cloudwatch
