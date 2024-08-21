@@ -1,0 +1,77 @@
+region: {{ ansible_ec2_placement_region }}
+
+metrics:
+  - aws_namespace: AWS/ECS
+    aws_metric_name: CPUUtilization
+    aws_dimensions:
+      - name: MyzloECS
+    aws_statistics: [Average, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: MemoryUtilization
+    aws_dimensions:
+      - name: MyzloECS
+    aws_statistics: [Average, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: CPUUtilization
+    aws_dimensions:
+      - name: MyzloECS
+      - name: ServiceName
+      - name: TaskDefinitionFamily
+    aws_statistics: [Average, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: MemoryUtilization
+    aws_dimensions:
+      - name: MyzloECS
+      - name: ServiceName
+      - name: TaskDefinitionFamily
+    aws_statistics: [Average, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: RunningTasksCount
+    aws_dimensions:
+      - name: MyzloECS
+      - name: ServiceName
+    aws_statistics: [Average, Minimum, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: PendingTasksCount
+    aws_dimensions:
+      - name: MyzloECS
+      - name: ServiceName
+    aws_statistics: [Average, Minimum, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: RunningTasksCount
+    aws_dimensions:
+      - name: MyzloECS
+      - name: ServiceName
+      - name: TaskDefinitionFamily
+    aws_statistics: [Average, Minimum, Maximum]
+    period_seconds: 300
+    range_seconds: 3600
+    delay_seconds: 600
+
+rate_limit: 25
+interval: 5m
+
