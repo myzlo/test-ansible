@@ -274,7 +274,7 @@ grafana_datasources:
   - name: "Prometheus"
     type: "prometheus"
     access: "proxy"
-    url: "http://prometheus.local:9090"
+    url: "http://prometheus.monitoring.local:9090"
     basicAuth: true
     basicAuthUser: "admin"
     basicAuthPassword: "password"

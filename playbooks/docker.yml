@@ -1,6 +1,63 @@
 ---
-- name: Install Docker
+- name: Install and configure Docker and CloudWatch Exporter
   hosts: prometheus
-  become: true
-  roles:
-    - docker
+  become: yes
+
+  tasks:
+    - name: Install dependencies
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - curl
+        - docker
+
+    - name: Enable Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Get latest Docker Compose version from GitHub
+      uri:
+        url: https://api.github.com/repos/docker/compose/releases/latest
+        return_content: yes
+      register: docker_compose_latest_release
+
+    - name: Set Docker Compose version
+      set_fact:
+        docker_compose_version: "{{ docker_compose_latest_release.json.tag_name }}"
+
+    - name: Install latest docker-compose
+      get_url:
+        url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-$(uname -s)-$(uname -m)"
+        dest: /usr/local/bin/docker-compose
+        mode: 'u+x,g+x'
+
+    - name: Create docker group if not present
+      ansible.builtin.group:
+        name: docker
+        state: present
+
+    - name: Add ec2-user to docker group
+      user:
+        name: ec2-user
+        groups: docker
+        append: yes
+
+    - name: Copy CloudWatch Exporter config file
+      copy:
+        src: /path/to/local/cloudwatch-exporter.yaml
+        dest: /path/to/remote/cloudwatch-exporter.yaml
+
+    - name: Run CloudWatch Exporter container
+      docker_container:
+        name: cloudwatch_exporter
+        image: prom/cloudwatch-exporter
+        ports:
+          - "9106:9106"
+        volumes:
+          - "/path/to/remote/cloudwatch-exporter.yaml:/config/config.yml"
+        state: started
+        restart_policy: always
