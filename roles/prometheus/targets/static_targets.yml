@@ -1,3 +1,4 @@
+---
 - targets:
     - 'prometheus.monitoring.local:9100'
   labels:
