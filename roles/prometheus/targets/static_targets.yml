@@ -1,0 +1,14 @@
+- targets:
+    - 'prometheus.monitoring.local:9100'
+  labels:
+    job: 'grafana'
+
+- targets:
+    - 'grafana.monitoring.local:9100'
+  labels:
+    job: 'grafana'
+
+- targets:
+    - 'localhost:9106'
+  labels:
+    job: 'cw_exporter'
