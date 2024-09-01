@@ -94,12 +94,11 @@ prometheus_alert_rules_files:
   - prometheus/rules/*.rules
 
 prometheus_static_targets_files:
-  - ./roles/prometheus/targets/*.yml
-  - ./roles/prometheus/targets/*.json
+  - "{{ role_path }}/targets/*.yml"
+  
 
 prometheus_scrape_config_files:
-  - ./roles/prometheus/targets/*.yml
-  - ./roles/prometheus/targets/*.json
+  - "{{ role_path }}/targets/*.yml"
 
 # yamllint disable rule:line-length
 prometheus_alert_rules:  # noqa yaml[line-length]  # noqa line-length
