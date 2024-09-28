@@ -1,0 +1,18 @@
+- name: Gather EC2 metadata
+  ec2_metadata_facts:
+
+- name: Copy CloudWatch Exporter config file with dynamic region
+  template:
+    src: cloudwatch-exporter.yaml.j2
+    dest: /home/ec2-user/cloudwatch-exporter.yaml
+
+- name: Run CloudWatch Exporter container
+  docker_container:
+    name: cloudwatch_exporter
+    image: prom/cloudwatch-exporter
+    ports:
+      - "9106:9106"
+    volumes:
+      - "/home/ec2-user/cloudwatch-exporter.yaml:/config/config.yml"
+    state: started
+    restart_policy: always

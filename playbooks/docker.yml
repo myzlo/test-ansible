@@ -1,0 +1,6 @@
+---
+- name: Install and configure Docker
+  hosts: prometheus
+  become: true
+  roles:
+    - docker

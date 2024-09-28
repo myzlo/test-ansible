@@ -2,4 +2,6 @@
 - import_playbook: node_exporter.yml
 - import_playbook: prometheus.yml
 - import_playbook: grafana.yml
-- import_playbook: docker_cloudwatch_exporter.yml
+- import_playbook: docker.yml
+- import_playbook: cloudwatch-exporter.yml
+- import_playbook: ecs_task_exporter.yml

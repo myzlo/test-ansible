@@ -1,0 +1,6 @@
+---
+- name: Install ECS Task Exporter
+  hosts: prometheus
+  become: true
+  roles:
+    - ecs_task_exporter

@@ -1,6 +1,0 @@
----
-- name: Install and configure Docker and CloudWatch Exporter
-  hosts: prometheus
-  become: true
-  roles:
-    - docker_cloudwatch_exporter
