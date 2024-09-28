@@ -3,11 +3,11 @@
 
 - name: Run ECS task counter
   docker_container:
-    name: cloudwatch_exporter
+    name: ecs_task_exporter
     image: myzlo/ecs-task-counter
     ports:
       - "8000:8000"
     state: started
     restart_policy: always
     env:
-      AWS_REGION: "{{ ansible_ec2_metadata.region }}"
+      AWS_REGION: "{{ ansible_ec2_placement_region }}"
