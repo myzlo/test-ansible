@@ -6,6 +6,11 @@
     job: 'node_exporter'
 
 - targets:
-    - 'localhost:9106'
+    - 'prometheus.monitoring.local:9106'
   labels:
     job: 'cw_exporter'
+
+- targets:
+    - 'prometheus.monitoring.local:8000'
+  labels:
+    job: 'ecs-task-counter'
