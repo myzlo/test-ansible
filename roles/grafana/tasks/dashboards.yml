@@ -8,16 +8,16 @@
   register: __tmp_dashboards
   changed_when: false
 
-- name: "Copy Grafana dashboards from Ansible project to server"
-  ansible.builtin.copy:
-    src: "{{ item }}"
-    dest: "{{ grafana_data_dir }}/dashboards"
-    owner: grafana
-    group: grafana
-    mode: "0640"
-  with_fileglob:
-    - "dashboards/*.json"
-  when: not ansible_check_mode
+# - name: "Copy Grafana dashboards from Ansible project to server"
+#   ansible.builtin.copy:
+#     src: "{{ item }}"
+#     dest: "{{ grafana_data_dir }}/dashboards"
+#     owner: grafana
+#     group: grafana
+#     mode: "0640"
+#   with_fileglob:
+#     - "dashboards/*.json"
+#   when: not ansible_check_mode
 
 - name: "Download grafana.net dashboards"
   become: false
