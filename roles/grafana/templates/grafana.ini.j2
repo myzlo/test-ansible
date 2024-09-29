@@ -107,7 +107,7 @@ google_analytics_ua_id = "{{ grafana_analytics.google_analytics_ua_id }}"
 
 # Dashboards
 [dashboards]
-path = {{ grafana_data_dir }}/dashboards/home-dashboard.json
+default_home_dashboard_path = /var/lib/grafana/dashboards/home-dashboard.json
 versions_to_keep = 20
 
 [dashboards.json]
