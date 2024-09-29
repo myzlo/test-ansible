@@ -1,7 +1,7 @@
 {
     "__inputs": [
       {
-        "name": "DS_PROMETHEUS",
+        "name": "Prometheus",
         "label": "Prometheus",
         "description": "",
         "type": "datasource",
@@ -173,7 +173,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -254,7 +254,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -290,7 +290,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "System load  over all CPU cores together",
         "fieldConfig": {
@@ -380,7 +380,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Used Swap",
         "fieldConfig": {
@@ -468,7 +468,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Used Root FS",
         "fieldConfig": {
@@ -557,7 +557,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total number of CPU cores",
         "fieldConfig": {
@@ -640,7 +640,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "System uptime",
         "fieldConfig": {
@@ -726,7 +726,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total RootFS",
         "fieldConfig": {
@@ -817,7 +817,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total RAM",
         "fieldConfig": {
@@ -902,7 +902,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total SWAP",
         "fieldConfig": {
@@ -987,7 +987,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -1102,7 +1102,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "expr": "sum(irate(prometheus_tsdb_head_samples_appended_total{job=\"prometheus\"}[5m]))",
             "format": "time_series",
@@ -1121,7 +1121,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -1204,7 +1204,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "expr": "topk(5, max(scrape_duration_seconds) by (job))",
             "format": "time_series",
@@ -1222,7 +1222,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -1305,7 +1305,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "expr": "prometheus_engine_query_duration_seconds{job=\"prometheus\", quantile=\"0.99\"}",
             "format": "time_series",
@@ -1321,7 +1321,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -1390,7 +1390,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "expr": "prometheus_tsdb_wal_corruptions_total{job=\"prometheus\"}",
             "format": "time_series",
@@ -1490,7 +1490,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -1572,7 +1572,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -1608,7 +1608,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "System load  over all CPU cores together",
         "fieldConfig": {
@@ -1698,7 +1698,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Used Swap",
         "fieldConfig": {
@@ -1786,7 +1786,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Used Root FS",
         "fieldConfig": {
@@ -1875,7 +1875,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total number of CPU cores",
         "fieldConfig": {
@@ -1958,7 +1958,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "System uptime",
         "fieldConfig": {
@@ -2044,7 +2044,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total RootFS",
         "fieldConfig": {
@@ -2135,7 +2135,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total RAM",
         "fieldConfig": {
@@ -2220,7 +2220,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "description": "Total SWAP",
         "fieldConfig": {
@@ -2318,7 +2318,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -2398,7 +2398,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "disableTextWrap": false,
             "editorMode": "builder",
@@ -2418,7 +2418,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -2498,7 +2498,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "disableTextWrap": false,
             "editorMode": "builder",
@@ -2518,7 +2518,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -2598,7 +2598,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "disableTextWrap": false,
             "editorMode": "builder",
@@ -2619,7 +2619,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "Prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -2672,7 +2672,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "Prometheus"
             },
             "disableTextWrap": false,
             "editorMode": "builder",
@@ -2700,7 +2700,7 @@
           "current": {},
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "Prometheus"
           },
           "definition": "label_values(node_uname_info{instance=\"prometheus.monitoring.local:9100\"},instance)",
           "hide": 0,
@@ -2769,7 +2769,7 @@
           "current": {},
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "Prometheus"
           },
           "definition": "",
           "hide": 0,
