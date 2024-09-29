@@ -81,6 +81,17 @@
     - "{{ grafana_dashboards_dir }}/*.json"
   when: "not grafana_use_provisioning"
 
+- name: "Copy Grafana dashboards from Ansible project to server"
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ grafana_dashboards_dir }}/{{ item | basename }}"
+    owner: grafana
+    group: grafana
+    mode: "0640"
+  with_fileglob:
+    - "dashboards/*.json"
+  when: not ansible_check_mode
+  
 - name: "Import grafana dashboards through provisioning"
   when: grafana_use_provisioning
   block:

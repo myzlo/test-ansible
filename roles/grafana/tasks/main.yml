@@ -118,3 +118,9 @@
   when: "grafana_dashboards | length > 0 or __found_dashboards | length > 0"
   vars:
     __found_dashboards: "{{ lookup('fileglob', grafana_dashboards_dir + '/*.json', wantlist=True) }}"
+
+- name: "Final restart of Grafana"
+  ansible.builtin.service:
+    name: grafana-server
+    state: restarted
+  become: true
